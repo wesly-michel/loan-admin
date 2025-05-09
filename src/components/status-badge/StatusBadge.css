@@ -7,4 +7,12 @@
   font-weight: 500;
   color: white;
   text-transform: capitalize;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .status-badge {
+    padding: 3px 6px;
+    font-size: 12px;
+  }
 }

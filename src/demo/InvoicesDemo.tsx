@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { DataTable } from '../components/data-table';
 import { StatusBadge } from '../components/status-badge';
 import { SearchInput } from '../components/search-input';
@@ -25,6 +25,17 @@ export const InvoicesDemo: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [loading] = useState(false);
 
+  const renderStatusBadge = useCallback((value: string | number) => (
+    <StatusBadge 
+      status={value as 'pending' | 'complete' | 'error'} 
+      text={String(value)}
+    />
+  ), []);
+
+  const handleRowClick = useCallback((row: Invoice) => {
+    alert(`${row.vendor}'s Invoice ${row.id} clicked`);
+  }, []);
+
   const columns = [
     { key: 'id', header: 'ID', sortable: true },
     { key: 'vendor', header: 'Vendor', sortable: true },
@@ -33,12 +44,7 @@ export const InvoicesDemo: React.FC = () => {
       key: 'status', 
       header: 'Status', 
       sortable: true,
-      render: (value: string | number) => (
-        <StatusBadge 
-          status={value as 'pending' | 'complete' | 'error'} 
-          text={String(value)}
-        />
-      )
+      render: renderStatusBadge
     },
     { key: 'date', header: 'Date', sortable: true }
   ];
@@ -46,10 +52,6 @@ export const InvoicesDemo: React.FC = () => {
   const filteredData = mockData.filter(invoice =>
     invoice.vendor.toLowerCase().includes(searchTerm.toLowerCase())
   );
-
-  const handleRowClick = (row: Invoice) => {
-    alert(`${row.vendor}'s Invoice ${row.id} clicked`);
-  };
 
   return (
     <div className="invoices-demo">

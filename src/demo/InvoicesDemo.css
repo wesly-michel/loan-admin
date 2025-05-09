@@ -1,5 +1,8 @@
 .invoices-demo {
   padding: 24px 0;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .invoices-demo h1 {
@@ -12,4 +15,20 @@
 .search-container {
   margin-bottom: 24px;
   max-width: 300px;
+}
+
+@media (max-width: 768px) {
+  .invoices-demo {
+    padding: 16px 0;
+  }
+
+  .invoices-demo h1 {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .search-container {
+    max-width: 100%;
+    margin-bottom: 16px;
+  }
 }

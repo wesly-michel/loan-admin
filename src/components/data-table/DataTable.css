@@ -1,10 +1,14 @@
 .data-table-container {
   width: 100%;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 -16px;
+  padding: 0 16px;
 }
 
 .data-table {
   width: 100%;
+  min-width: 650px;
   border-collapse: collapse;
   border: 1px solid #e5e7eb;
 }
@@ -19,6 +23,7 @@
 .data-table th {
   background-color: #f9fafb;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .data-table th.sortable {
@@ -49,4 +54,17 @@
 .sort-indicator {
   display: inline-block;
   margin-left: 4px;
+}
+
+@media (max-width: 768px) {
+  .data-table-container {
+    margin: 0 -12px;
+    padding: 0 12px;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: 8px;
+    font-size: 14px;
+  }
 }

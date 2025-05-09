@@ -7,7 +7,11 @@
 
 .app > div {
   width: 100%;
-  max-width: 1200px;
   padding: 0 24px;
-  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .app > div {
+    padding: 0 16px;
+  }
 }
