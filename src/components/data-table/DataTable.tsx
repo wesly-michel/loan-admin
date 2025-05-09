@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import  { useState, useMemo } from 'react';
 import type { DataTableProps, Column, SortState } from './DataTable.types';
 import './DataTable.css';
 
