@@ -1,0 +1,15 @@
+.invoices-demo {
+  padding: 24px 0;
+}
+
+.invoices-demo h1 {
+  margin-bottom: 24px;
+  color: #111827;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.search-container {
+  margin-bottom: 24px;
+  max-width: 300px;
+}
