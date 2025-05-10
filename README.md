@@ -24,3 +24,6 @@ Minimal re-renders
 ## How to run: 
 1. Download source
 2. Inside the directory, run:  npm run dev 
+
+## Testing
+1. Run "npm test" in the project directory
